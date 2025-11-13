@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Property - Embu Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-home"></i>
+                <span>Embu Real Estate</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rent.html">For Rent</a></li>
+                <li><a href="buy.html">For Sale</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html" class="admin-link active">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-cog"></i> Admin Panel</h1>
+            <p>Manage property listings</p>
+        </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section class="admin-section">
+        <div class="container">
+            <div class="admin-grid">
+                <!-- Add Property Form -->
+                <div class="admin-form-container">
+                    <h2>Add New Property</h2>
+                    <form id="addPropertyForm" class="admin-form">
+                        <div class="form-group">
+                            <label for="propertyTitle">Property Title *</label>
+                            <input type="text" id="propertyTitle" name="title" required 
+                                   placeholder="e.g., 3-Bedroom Bungalow in Dallas Estate">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="propertyType">Property Type *</label>
+                                <select id="propertyType" name="type" required>
+                                    <option value="">Select Type</option>
+                                    <option value="house">House</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="land">Land</option>
+                                    <option value="commercial">Commercial</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="propertyCategory">Category *</label>
+                                <select id="propertyCategory" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="rent">For Rent</option>
+                                    <option value="buy">For Sale</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyPrice">Price (KES) *</label>
+                            <input type="number" id="propertyPrice" name="price" required 
+                                   placeholder="e.g., 25000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyLocation">Location *</label>
+                            <input type="text" id="propertyLocation" name="location" required 
+                                   placeholder="e.g., Dallas Estate, Embu">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="propertyBedrooms">Bedrooms</label>
+                                <input type="number" id="propertyBedrooms" name="bedrooms" 
+                                       placeholder="e.g., 3">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="propertyBathrooms">Bathrooms</label>
+                                <input type="number" id="propertyBathrooms" name="bathrooms" 
+                                       placeholder="e.g., 2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="propertyArea">Area (sq ft)</label>
+                                <input type="number" id="propertyArea" name="area" 
+                                       placeholder="e.g., 1500">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyDescription">Description *</label>
+                            <textarea id="propertyDescription" name="description" rows="5" required 
+                                      placeholder="Describe the property features, amenities, etc."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyImages">Image URLs (comma-separated)</label>
+                            <textarea id="propertyImages" name="images" rows="3" 
+                                      placeholder="https://example.com/image1.jpg, https://example.com/image2.jpg"></textarea>
+                            <small>Enter image URLs separated by commas, or leave blank for placeholder images</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyFeatures">Features (comma-separated)</label>
+                            <input type="text" id="propertyFeatures" name="features" 
+                                   placeholder="e.g., Parking, Garden, Security">
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-plus"></i> Add Property
+                        </button>
+                    </form>
+                    <div id="adminSuccess" class="form-success" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Property added successfully!</p>
+                    </div>
+                </div>
+
+                <!-- Saved Properties List -->
+                <div class="saved-properties">
+                    <h2>Saved Properties</h2>
+                    <div id="savedPropertiesList">
+                        <!-- Saved properties will be displayed here -->
+                    </div>
+                    <button id="clearAllBtn" class="btn-danger">
+                        <i class="fas fa-trash"></i> Clear All Properties
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-home"></i> Embu Real Estate</h3>
+                    <p>Your trusted partner in finding the perfect property in Embu, Kenya.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rent.html">For Rent</a></li>
+                        <li><a href="buy.html">For Sale</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> meednait00@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +254 745 612 37</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Embu, Kenya</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Embu Real Estate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
