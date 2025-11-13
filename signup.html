@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Embu Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-home"></i>
+                <span>Embu Real Estate</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rent.html">For Rent</a></li>
+                <li><a href="buy.html">For Sale</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a href="admin.html" class="admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <i class="fas fa-user-plus"></i>
+                        <h2>Create Account</h2>
+                        <p>Join Embu Real Estate today</p>
+                    </div>
+                    
+                    <form id="signupForm" class="auth-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">
+                                    <i class="fas fa-user"></i> First Name
+                                </label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="Enter first name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">
+                                    <i class="fas fa-user"></i> Last Name
+                                </label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Enter last name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupEmail">
+                                <i class="fas fa-envelope"></i> Email Address
+                            </label>
+                            <input type="email" id="signupEmail" name="email" required placeholder="Enter your email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> Phone Number
+                            </label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+254 XXX XXX XXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupPassword">
+                                <i class="fas fa-lock"></i> Password
+                            </label>
+                            <input type="password" id="signupPassword" name="password" required placeholder="Create a password">
+                            <small class="form-hint">Must be at least 8 characters</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">
+                                <i class="fas fa-lock"></i> Confirm Password
+                            </label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" required>
+                                <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-auth">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+
+                        <div class="auth-divider">
+                            <span>OR</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="btn-social btn-google">
+                                <i class="fab fa-google"></i> Sign up with Google
+                            </button>
+                            <button type="button" class="btn-social btn-facebook">
+                                <i class="fab fa-facebook-f"></i> Sign up with Facebook
+                            </button>
+                        </div>
+
+                        <div class="auth-footer">
+                            <p>Already have an account? <a href="login.html">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-home"></i> Embu Real Estate</h3>
+                    <p>Your trusted partner in finding the perfect property in Embu, Kenya.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rent.html">For Rent</a></li>
+                        <li><a href="buy.html">For Sale</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> meednait00@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +254 745 612 37</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Embu, Kenya</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Embu Real Estate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Sign up form handling
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('signupEmail').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+
+            // Validate password match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Validate password length
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long!');
+                return;
+            }
+
+            // Here you would typically send this to your backend
+            console.log('Sign up attempt:', { firstName, lastName, email, phone, password, terms });
+
+            // Simulate successful signup
+            alert('Account created successfully! (This is a demo)');
+            // Redirect to login page
+            // window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

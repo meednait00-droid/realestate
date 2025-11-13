@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Embu Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-home"></i>
+                <span>Embu Real Estate</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rent.html">For Rent</a></li>
+                <li><a href="buy.html">For Sale</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-link active"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a href="admin.html" class="admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <i class="fas fa-user-circle"></i>
+                        <h2>Welcome Back</h2>
+                        <p>Login to your account</p>
+                    </div>
+                    
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email Address
+                            </label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fas fa-lock"></i> Password
+                            </label>
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-auth">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+
+                        <div class="auth-divider">
+                            <span>OR</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="btn-social btn-google">
+                                <i class="fab fa-google"></i> Continue with Google
+                            </button>
+                            <button type="button" class="btn-social btn-facebook">
+                                <i class="fab fa-facebook-f"></i> Continue with Facebook
+                            </button>
+                        </div>
+
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-home"></i> Embu Real Estate</h3>
+                    <p>Your trusted partner in finding the perfect property in Embu, Kenya.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rent.html">For Rent</a></li>
+                        <li><a href="buy.html">For Sale</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> meednait00@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +254 745 612 37</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Embu, Kenya</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Embu Real Estate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Login form handling
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            
+            // Here you would typically send this to your backend
+            console.log('Login attempt:', { email, password, rememberMe });
+            
+            // Simulate successful login
+            alert('Login successful! (This is a demo)');
+            // Redirect to home page
+            // window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
+
